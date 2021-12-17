@@ -57,6 +57,3 @@ func convert(nums []string) []int {
 	return res
 }
 
-func operate() {
-
-}
