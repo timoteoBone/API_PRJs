@@ -2,12 +2,19 @@ package calculo
 
 import "errors"
 
-func Sumar(nums []int) (int, error) {
+var Operations = map[string]int{
+	"suma":           1,
+	"resta":          1,
+	"division":       1,
+	"multiplicacion": 1,
+}
+
+func Sumar(nums []int) int {
 	suma := 0
 	for _, num := range nums {
 		suma += num
 	}
-	return suma, nil
+	return suma
 }
 
 func Restar(nums []int) (int, error) {
@@ -22,7 +29,7 @@ func Dividir(num1, num2 int) (int, error) {
 	if num2 != 0 {
 		return num1 / num2, nil
 	}
-	return 0, errors.New("No se puede dividir entre 0")
+	return 0, errors.New("no se puede dividir entre 0")
 }
 
 func Multiplicar(nums []int) (int, error) {
